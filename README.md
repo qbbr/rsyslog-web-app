@@ -13,6 +13,12 @@ Web Application for Rsyslog on Symfony + Vue.js
  * [Bootstrap 5.3](https://getbootstrap.com/)
  * under [Docker](https://www.docker.com/)
 
+## Screenshots
+
+[![qbbr-rsyslog-web-app-1](https://i.imgur.com/eYncLZbb.png)](https://i.imgur.com/eYncLZb.png)
+[![qbbr-rsyslog-web-app-2](https://i.imgur.com/cCORhjnb.png)](https://i.imgur.com/cCORhjn.png)
+[![qbbr-rsyslog-web-app-2](https://i.imgur.com/WxQxL9tb.png)](https://i.imgur.com/WxQxL9t.png)
+
 ## Install
 
 ### Docker
