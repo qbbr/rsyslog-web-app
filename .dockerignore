@@ -1,0 +1,9 @@
+.git
+.idea
+.gitignore
+.wget-hsts
+*.cache
+Dockerfile
+docker-*
+README.md
+/docker/
