@@ -2,7 +2,7 @@
 
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
 
-Web Application for Rsyslog on Symfony + Vue.js
+Web Application for Rsyslog on Symfony + Vue.js.
 
 ## Stack
 
@@ -50,7 +50,6 @@ cp docker-compose.override.yml.dist docker-compose.override.yml
 make build@dev
 make up
 make install@dev
-make load-fixtures
 ```
 
 ## Usage
