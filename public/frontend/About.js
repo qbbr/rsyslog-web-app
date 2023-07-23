@@ -55,8 +55,8 @@ export default {
                 <li><kbd>Ctrl + Shift + ArrowLeft</kbd> - goto the first page</li>
                 <li><kbd>Click(filter link)</kbd> - filter <code>=</code></li>
                 <li><kbd>RightClick(filter link)</kbd> - exclude filter <code>!=</code></li>
-                <li><kbd>Ctrl + click(filter link)</kbd> - multiple select/toggle filter <code>=</code></li>
-                <li><kbd>Ctrl + click(filter link)</kbd> - multiple select/toggle exclude filter <code>!=</code></li>
+                <li><kbd>Ctrl + Click(filter link)</kbd> - multiple select/toggle filter <code>=</code></li>
+                <li><kbd>Ctrl + RightClick(filter link)</kbd> - multiple select/toggle exclude filter <code>!=</code></li>
             </ul>
 
             <span class="text-muted">developed with &lt;3 by <a href="https://qbbr.io" rel="external">@qbbr</a></span>

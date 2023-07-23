@@ -85,8 +85,8 @@ Examples:
  * <kbd>Ctrl + Shift + ArrowLeft</kbd> - goto the first page
  * <kbd>Click(filter link)</kbd> - filter `=`
  * <kbd>RightClick(filter link)</kbd> - exclude filter `!=`
- * <kbd>Ctrl + click(filter link)</kbd> - multiple select/toggle filter `=`
- * <kbd>Ctrl + click(filter link)</kbd> - multiple select/toggle exclude filter `!=`
+ * <kbd>Ctrl + Click(filter link)</kbd> - multiple select/toggle filter `=`
+ * <kbd>Ctrl + RightClick(filter link)</kbd> - multiple select/toggle exclude filter `!=`
 
 ## Tests
 
