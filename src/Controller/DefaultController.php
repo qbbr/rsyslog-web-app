@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Config;
 use App\Pagination\PaginationDataCollector;
-use App\Pagination\Paginator;
 use App\Repository\SystemEventsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -26,7 +26,7 @@ class DefaultController extends AbstractController
         Request $request,
     ): JsonResponse {
         $page = $request->query->getInt('page', 1);
-        $pageSize = $request->query->getInt('pageSize', Paginator::PAGE_SIZE);
+        $pageSize = $request->query->getInt('pageSize', Config::PAGE_SIZE);
         $searchQuery = $request->query->get('searchQuery');
 
         $paginator = $this->systemEventsRepository->findLatest($page, $pageSize, $searchQuery);

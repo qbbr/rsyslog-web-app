@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Repository;
 
+use App\Config;
 use App\Entity\SystemEvents;
 use App\Helper\SearchQueryHelper;
 use App\Pagination\Paginator;
@@ -29,7 +30,7 @@ class SystemEventsRepository extends ServiceEntityRepository
 
     public function findLatest(
         int $page = 1,
-        int $pageSize = Paginator::PAGE_SIZE,
+        int $pageSize = Config::PAGE_SIZE,
         string $searchQuery = null,
     ): Paginator {
         $qb = $this->createQueryBuilder('e');

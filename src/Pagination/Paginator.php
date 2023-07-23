@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace App\Pagination;
 
+use App\Config;
 use App\Helper\SearchQueryHelper;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\ORM\Tools\Pagination\Paginator as DoctrinePaginator;
 
 class Paginator
 {
-    public const PAGE_SIZE = 25;
     private int $currentPage;
     private \Traversable $results;
     private int $total;
 
     public function __construct(
         private readonly QueryBuilder $queryBuilder,
-        private readonly int $pageSize = self::PAGE_SIZE,
+        private readonly int $pageSize = Config::PAGE_SIZE,
         private array $filters = [], // todo@qbbr: n to fix
     ) {
     }
@@ -54,31 +54,6 @@ class Paginator
     public function getPageSize(): int
     {
         return $this->pageSize;
-    }
-
-    public function hasPreviousPage(): bool
-    {
-        return $this->currentPage > 1;
-    }
-
-    public function getPreviousPage(): int
-    {
-        return max(1, $this->currentPage - 1);
-    }
-
-    public function hasNextPage(): bool
-    {
-        return $this->currentPage < $this->getLastPage();
-    }
-
-    public function getNextPage(): int
-    {
-        return min($this->getLastPage(), $this->currentPage + 1);
-    }
-
-    public function hasToPaginate(): bool
-    {
-        return $this->total > $this->pageSize;
     }
 
     public function getTotal(): int
