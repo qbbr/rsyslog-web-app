@@ -71,11 +71,6 @@ Examples:
  * `host="SRV-2, DNSSEC"` (can be multiple)
  * `h="QQ", f!="auth",p="error"`
 
-## Tests
-
-```agsl
-
-```
 ### Hotkeys
 
  * <kbd>/</kbd>, <kbd>s</kbd> - focus the search bar
