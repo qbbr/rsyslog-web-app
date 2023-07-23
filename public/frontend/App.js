@@ -22,7 +22,7 @@ export default {
                         <div class="input-group">
                             <input class="form-control" type="text" placeholder="Search" aria-label="Search" v-model="searchQuery" v-on:keyup.enter="search" ref="search" spellcheck="false">
                             <button type="button" class="btn btn-outline-danger border" v-if="searchQuery.length" @click="clearSearchQuery"><i class="bi bi-x-lg"></i></button>
-                            <button type="button" class="btn btn-outline-light" @click="search">Search</button>
+                            <button type="button" class="btn btn-outline-light" @click="search"><i class="bi bi-search"></i></button>
                         </div>
                         <button type="button" class="btn btn-outline-light ms-3" @click="refresh"><i class="bi bi-arrow-repeat"></i></button>
                     </div>
