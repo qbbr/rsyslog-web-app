@@ -94,3 +94,8 @@ Examples:
 make install@test
 make test
 ```
+
+---
+
+Build and run tested on **amd64** and **aarch64** (rpi3b).
+Developed with &lt;3 by [@qbbr](https://qbbr.io).

@@ -59,7 +59,13 @@ export default {
                 <li><kbd>Ctrl + RightClick(filter link)</kbd> - multiple select/toggle exclude filter <code>!=</code></li>
             </ul>
 
-            <span class="text-muted">developed with &lt;3 by <a href="https://qbbr.io" rel="external">@qbbr</a></span>
+            <hr>
+
+            <span class="text-muted">
+                Build and run tested on <b>amd64</b> and <b>aarch64</b> (rpi3b).
+                <br>
+                Developed with &lt;3 by <a href="https://qbbr.io" rel="external">@qbbr</a>.
+            </span>
         </div>
     `,
     data() {
