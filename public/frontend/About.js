@@ -19,7 +19,7 @@ export default {
                 OS: {{ info.os }}<br>
                 PHP: {{ info.php.ver }}<br>
                 Symfony: {{ info.sf.ver }}<br>
-                Database: {{ info.db.ver }}
+                Database: {{ info.db.ver }} ({{ info.db.size }} Mb)
             </p>
 
             <h3>Search</h3>
@@ -76,7 +76,7 @@ export default {
                 os: '...',
                 php: { ver: '...' },
                 sf: { ver: '...' },
-                db: { ver: '...' },
+                db: { ver: '...', size: '...' },
             }
         }
     },

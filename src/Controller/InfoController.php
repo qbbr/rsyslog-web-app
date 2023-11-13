@@ -31,6 +31,7 @@ class InfoController extends AbstractController
             ],
             'db' => [
                 'ver' => $this->dbHelper->getVersion(),
+                'size' => $this->dbHelper->getSize(),
             ],
         ]);
     }

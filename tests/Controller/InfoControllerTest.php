@@ -19,6 +19,9 @@ class InfoControllerTest extends WebTestCase
         $dbHelperService->expects(self::once())
             ->method('getVersion')
             ->willReturn('3.41.2');
+        $dbHelperService->expects(self::once())
+            ->method('getSize')
+            ->willReturn('3.05');
         self::getContainer()->set(DbHelper::class, $dbHelperService);
 
         $client->request('GET', self::URI);

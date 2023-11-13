@@ -9,10 +9,10 @@ use Symfony\Component\Serializer\Context\Normalizer\DateTimeNormalizerContextBui
 use Symfony\Component\Serializer\Context\Normalizer\ObjectNormalizerContextBuilder;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
-class PaginationDataCollector
+readonly class PaginationDataCollector
 {
     public function __construct(
-        private readonly NormalizerInterface $normalizer,
+        private NormalizerInterface $normalizer,
     ) {
     }
 
