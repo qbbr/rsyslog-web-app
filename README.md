@@ -1,7 +1,5 @@
 # rsyslog-web-app
 
-[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
-
 Web Application for Rsyslog on Symfony + Vue.js.
 
 ## Stack
