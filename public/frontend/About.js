@@ -64,7 +64,7 @@ export default {
             <span class="text-muted">
                 Build and run tested on <b>amd64</b> and <b>aarch64</b> (rpi3b).
                 <br>
-                Developed with &lt;3 by <a href="https://qbbr.io" rel="external">@qbbr</a>.
+                Developed with &lt;3 by <a href="https://qbbr.cat" rel="external">@qbbr</a>.
             </span>
         </div>
     `,
