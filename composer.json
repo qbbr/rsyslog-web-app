@@ -24,14 +24,14 @@
         "doctrine/doctrine-bundle": "^2.11.1",
         "doctrine/doctrine-migrations-bundle": "^3.3",
         "doctrine/orm": "^2.17.2",
-        "symfony/console": "6.3.*",
-        "symfony/dotenv": "6.3.*",
+        "symfony/console": "6.4.*",
+        "symfony/dotenv": "6.4.*",
         "symfony/flex": "^2.4.3",
-        "symfony/framework-bundle": "6.3.*",
-        "symfony/property-access": "6.3.*",
-        "symfony/runtime": "6.3.*",
-        "symfony/serializer": "6.3.*",
-        "symfony/yaml": "6.3.*"
+        "symfony/framework-bundle": "6.4.*",
+        "symfony/property-access": "6.4.*",
+        "symfony/runtime": "6.4.*",
+        "symfony/serializer": "6.4.*",
+        "symfony/yaml": "6.4.*"
     },
     "config": {
         "allow-plugins": {
@@ -78,7 +78,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "6.3.*",
+            "require": "6.4.*",
             "docker": false
         }
     },
@@ -87,8 +87,8 @@
         "friendsofphp/php-cs-fixer": "^3.46",
         "phpstan/phpstan": "^1.10.55",
         "phpunit/phpunit": "^10.5.5",
-        "symfony/browser-kit": "6.3.*",
-        "symfony/css-selector": "6.3.*",
+        "symfony/browser-kit": "6.4.*",
+        "symfony/css-selector": "6.4.*",
         "symfony/maker-bundle": "^1.52",
         "symfony/phpunit-bridge": "^6.4.2"
     }
