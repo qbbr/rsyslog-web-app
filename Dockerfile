@@ -72,4 +72,4 @@ FROM nginx:stable-alpine as nginx
 ##
 # db
 ##
-FROM linuxserver/mariadb:10.11.4 as db
+FROM linuxserver/mariadb:10.11.5 as db
