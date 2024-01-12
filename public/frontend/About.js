@@ -18,7 +18,7 @@ export default {
                 Vue.js: {{ info.vue.ver }}<br>
                 OS: {{ info.os }}<br>
                 PHP: {{ info.php.ver }}<br>
-                Symfony: {{ info.sf.ver }}<br>
+                Symfony: {{ info.sf.ver }} ({{ info.sf.env }})<br>
                 Database: {{ info.db.ver }} ({{ info.db.size }} Mb)
             </p>
 
@@ -75,7 +75,7 @@ export default {
                 vue: { ver: Vue.version },
                 os: '...',
                 php: { ver: '...' },
-                sf: { ver: '...' },
+                sf: { ver: '...', env: '...' },
                 db: { ver: '...', size: '...' },
             }
         }

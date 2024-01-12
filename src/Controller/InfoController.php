@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Kernel;
 use App\Service\Helper\DbHelper;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -15,6 +16,7 @@ class InfoController extends AbstractController
 {
     public function __construct(
         private readonly DbHelper $dbHelper,
+        private readonly ParameterBagInterface $parameterBag,
     ) {
     }
 
@@ -28,6 +30,7 @@ class InfoController extends AbstractController
             'os' => \PHP_OS,
             'sf' => [
                 'ver' => Kernel::VERSION,
+                'env' => $this->parameterBag->get('kernel.environment'),
             ],
             'db' => [
                 'ver' => $this->dbHelper->getVersion(),
