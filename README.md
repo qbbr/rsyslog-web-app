@@ -34,7 +34,7 @@ make up
 make install@prod
 ```
 
-see [rsyslog mysql server](https://qbbr.io/blog/2023/07/09/rsyslog-mysql-server.html)
+see [rsyslog mysql server](https://qbbr.cat/blog/2023/07/09/rsyslog-mysql-server.html)
 
 ```bash
 sudo apt install rsyslog-mysql default-mysql-client --no-install-recommends
