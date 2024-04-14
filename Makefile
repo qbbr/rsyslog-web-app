@@ -1,6 +1,13 @@
-.DEFAULT_GOAL := black@hole
-UID           := $(shell id -u)
-USER          := $(shell id -un)
+.DEFAULT_GOAL = black@hole
+
+UID           = $(shell id -u)
+USER          = $(shell id -un)
+
+COMPOSER      = composer
+CONSOLE       = bin/console
+PHPUNIT       = bin/phpunit
+PHPCSFIXER    = vendor/bin/php-cs-fixer
+PHPSTAN       = vendor/bin/phpstan
 
 ##
 # build containers
@@ -26,7 +33,7 @@ build@prod:
 # install depends
 ##
 _install:
-	make composer-check-platform-reqs
+	make check
 	make install-frontend
 .PHONY: _install
 
@@ -54,38 +61,34 @@ install-frontend:
 .PHONY: install-frontend
 
 install-db:
-	make cmd='./bin/console d:d:c --if-not-exists && ./bin/console d:s:u --force' exec-app
+	make cmd='$(CONSOLE) d:d:c --if-not-exists && $(CONSOLE) d:s:u --force' exec-app
 .PHONY: install-db
 
 install-db@test:
 	# `--if-not-exists` does not supports on sqlite
-	make cmd='./bin/console -e test d:d:c && ./bin/console -e test d:s:u --force' exec-app
+	make cmd='$(CONSOLE) -e test d:d:c && $(CONSOLE) -e test d:s:u --force' exec-app
 .PHONY: install-db@test
 
 ##
 # composer
 ##
 composer-install@dev:
-	make cmd='composer install' exec-app
+	make cmd='$(COMPOSER) install' exec-app
 .PHONY: composer-install@dev
 
 composer-install@prod:
-	make cmd='composer install --no-dev --optimize-autoloader' exec-app
+	make cmd='$(COMPOSER) install --no-dev --optimize-autoloader' exec-app
 .PHONY: composer-install@prod
 
 composer-clear-cache:
-	make cmd='composer clear-cache' exec-app
+	make cmd='$(COMPOSER) clear-cache' exec-app
 .PHONY: composer-clear-cache
-
-composer-check-platform-reqs:
-	make cmd='composer check-platform-reqs' exec-app
-.PHONY: composer-check-platform-reqs
 
 ##
 # app
 ##
 _load-fixtures:
-	make cmd='./bin/console $(env_arg) doctrine:fixtures:load -n' exec-app
+	make cmd='$(CONSOLE) $(env_arg) doctrine:fixtures:load -n' exec-app
 .PHONY: _load-fixtures
 
 load-fixtures@dev:
@@ -97,12 +100,12 @@ load-fixtures@test:
 .PHONY: load-fixtures@test
 
 cache-clear:
-	make cmd='./bin/console c:c' exec-app
-	make cmd='./bin/console c:w' exec-app
+	make cmd='$(CONSOLE) c:c' exec-app
+	make cmd='$(CONSOLE) c:w' exec-app
 .PHONY: cache-clear
 
 test:
-	make cmd='./bin/phpunit --testdox' exec-app
+	make cmd='$(PHPUNIT) --testdox' exec-app
 .PHONY: test
 
 ##
@@ -144,14 +147,19 @@ shell-db:
 ##
 # lint
 ##
+check: ### Check that platform requirements and validate composer.* files
+	make cmd="$(COMPOSER) check-platform-reqs" exec-app
+	make cmd="$(COMPOSER) validate" exec-app
+.PHONY: check
+
+cs:
+	make cmd='$(PHPCSFIXER) fix --dry-run --diff' exec-app
+.PHONY: cs
+
 cs-fix:
-	make cmd='./vendor/bin/php-cs-fixer fix' exec-app
+	make cmd='$(PHPCSFIXER) fix' exec-app
 .PHONY: cs-fix
 
-cs-check:
-	make cmd='./vendor/bin/php-cs-fixer fix --dry-run --diff' exec-app
-.PHONY: cs-check
-
 phpstan:
-	make cmd='./vendor/bin/phpstan analyse src tests' exec-app
+	make cmd='$(PHPSTAN) analyse src tests' exec-app
 .PHONY: phpstan
