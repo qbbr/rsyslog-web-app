@@ -31,7 +31,7 @@ class SystemEventsRepository extends ServiceEntityRepository
     public function findLatest(
         int $page = 1,
         int $pageSize = Config::PAGE_SIZE,
-        string $searchQuery = null,
+        ?string $searchQuery = null,
     ): Paginator {
         $qb = $this->createQueryBuilder('e');
 
