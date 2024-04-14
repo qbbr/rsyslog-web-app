@@ -9,11 +9,13 @@ PHPUNIT       = bin/phpunit
 PHPCSFIXER    = vendor/bin/php-cs-fixer
 PHPSTAN       = vendor/bin/phpstan
 
+DC            = docker compose
+
 ##
 # build containers
 ##
 _build:
-	docker compose \
+	$(DC) \
 	    $(args) \
 	    build \
 	        --no-cache \
@@ -112,36 +114,36 @@ test:
 # docker
 ##
 up:
-	docker compose up -d --remove-orphans
+	$(DC) up -d --remove-orphans
 .PHONY: up
 
 down:
-	docker compose down -v
+	$(DC) down -v
 .PHONY: down
 
 ps:
-	docker compose ps -a
+	$(DC) ps -a
 .PHONY: ps
 
 logs:
-	docker compose logs -f
+	$(DC) logs -f
 .PHONY: logs
 
 # make cmd='composer info' exec-app
 exec-app:
-	docker compose exec app sh -c "$(cmd)"
+	$(DC) exec app sh -c "$(cmd)"
 .PHONY: exec-app
 
 shell-app:
-	docker compose exec app bash
+	$(DC) exec app bash
 .PHONY: shell-app
 
 shell-nginx:
-	docker compose exec nginx sh
+	$(DC) exec nginx sh
 .PHONY: shell-nginx
 
 shell-db:
-	docker compose exec db sh
+	$(DC) exec db sh
 .PHONY: shell-db
 
 ##
