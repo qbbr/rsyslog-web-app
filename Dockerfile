@@ -1,7 +1,7 @@
 ##
 # base
 ##
-FROM php:8.2-fpm-alpine AS base
+FROM php:8.3-fpm-alpine AS base
 
 ARG HOME="/var/www"
 ARG USER
