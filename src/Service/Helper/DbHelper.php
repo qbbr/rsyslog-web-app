@@ -6,10 +6,10 @@ namespace App\Service\Helper;
 
 use Doctrine\ORM\EntityManagerInterface;
 
-class DbHelper
+readonly class DbHelper
 {
     public function __construct(
-        private readonly EntityManagerInterface $em,
+        private EntityManagerInterface $em,
     ) {
     }
 
