@@ -67,9 +67,9 @@ EXPOSE 9000
 ##
 # nginx
 ##
-FROM nginx:stable-alpine as nginx
+FROM nginx:stable-alpine AS nginx
 
 ##
 # db
 ##
-FROM linuxserver/mariadb:10.11.6 as db
+FROM linuxserver/mariadb:10.11.6 AS db
