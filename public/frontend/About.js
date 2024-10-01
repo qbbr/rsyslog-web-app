@@ -26,24 +26,25 @@ export default {
 
             <p>
                 Default search by <b>message</b> and you can apply filters.
-                <br><br>
-                Available filters <em>(supports multiple)</em>:
-
-                <ul>
-                    <li><code>host</code> (alias <code>h</code>)</li>
-                    <li><code>facility</code> (alias <code>f</code>)</li>
-                    <li><code>tag</code> (alias <code>t</code>)</li>
-                    <li><code>priority</code> (alias <code>p</code>)</li>
-                </ul>
-
-                Examples:
-                <ul>
-                    <li><code>tag = "kernel:"</code></li>
-                    <li><code>host != "SRV-1", p = "info"</code></li>
-                    <li><code>host="SRV-2, DNSSEC"</code> (can be multiple)</li>
-                    <li><code>h="ROUTER-2", f!="auth",p="error"</code></li>
-                </ul>
             </p>
+
+            <h5>Available filters <em>(supports multiple)</em>:</h5>
+
+            <ul>
+                <li><code>host</code> (alias <code>h</code>)</li>
+                <li><code>facility</code> (alias <code>f</code>)</li>
+                <li><code>tag</code> (alias <code>t</code>)</li>
+                <li><code>priority</code> (alias <code>p</code>)</li>
+            </ul>
+
+            <h5>Examples:</h5>
+
+            <ul>
+                <li><code>tag = "kernel:"</code></li>
+                <li><code>host != "SRV-1", p = "info"</code></li>
+                <li><code>host="SRV-2, DNSSEC"</code> (can be multiple)</li>
+                <li><code>h="ROUTER-2", f!="auth",p="error"</code></li>
+            </ul>
 
             <h3>Hotkeys</h3>
 
