@@ -3,7 +3,7 @@
     "version": "2.0.0",
     "description": "Web Application for Rsyslog on Symfony + Vue.js",
     "type": "project",
-    "keywords": ["symfony", "rsyslog", "mysql", "vuejs", "qbbr", "docker"],
+    "keywords": ["symfony", "rsyslog", "mysql", "vuejs", "bootstrap", "qbbr", "docker"],
     "license": "MIT",
     "minimum-stability": "stable",
     "prefer-stable": true,
