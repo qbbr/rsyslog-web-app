@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class InfoControllerTest extends WebTestCase
 {
-    private const URI = '/api/info';
+    private const string URI = '/api/info';
 
     public function testInfo(): void
     {

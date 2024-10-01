@@ -6,7 +6,7 @@ namespace App;
 
 final readonly class Config
 {
-    public const PAGE_SIZE = 25;
-    public const GROUP_API = 'api';
-    public const DATE_TIME_FORMAT = 'Y-m-d\TH:i:s';
+    public const int PAGE_SIZE = 25;
+    public const string GROUP_API = 'api';
+    public const string DATE_TIME_FORMAT = 'Y-m-d\TH:i:s';
 }

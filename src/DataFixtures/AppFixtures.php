@@ -12,9 +12,10 @@ use Doctrine\Persistence\ObjectManager;
 
 class AppFixtures extends Fixture
 {
-    private const HOSTS = ['SRV1', 'CLNT2', 'ROUTER2', 'DNS_SRV'];
-    private const TAGS = ['kernel:', 'user:', 'systemd[1203]', 'pipewire[1211]:'];
+    private const array HOSTS = ['SRV1', 'CLNT2', 'ROUTER2', 'DNS_SRV'];
+    private const array TAGS = ['kernel:', 'user:', 'systemd[1203]', 'pipewire[1211]:'];
 
+    #[\Override]
     public function load(ObjectManager $manager): void
     {
         $n = 5000;

@@ -6,11 +6,13 @@ namespace App\EventSubscriber;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class ExceptionToJsonResponseSubscriber implements EventSubscriberInterface
 {
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [
@@ -48,7 +50,7 @@ class ExceptionToJsonResponseSubscriber implements EventSubscriberInterface
             return $exception->getStatusCode();
         }
 
-        return 500;
+        return Response::HTTP_INTERNAL_SERVER_ERROR;
     }
 
     private function getErrorTypeFromException(

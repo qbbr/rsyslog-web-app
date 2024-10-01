@@ -10,7 +10,7 @@ use Doctrine\Common\Collections\Criteria;
 
 class SearchQueryHelper
 {
-    private const FILTER_MAP = [
+    private const array FILTER_MAP = [
         'host' => 'fromHost',
         'h' => 'fromHost',
         'f' => 'facility',
@@ -19,10 +19,10 @@ class SearchQueryHelper
         'p' => 'priority',
     ];
 
-    public const FILTER_OPERATOR_EQ = '=';
-    public const FILTER_OPERATOR_NEQ = '!=';
+    public const string FILTER_OPERATOR_EQ = '=';
+    public const string FILTER_OPERATOR_NEQ = '!=';
 
-    private const OPERATOR_MAP = [
+    private const array OPERATOR_MAP = [
         self::FILTER_OPERATOR_EQ => 'in',
         self::FILTER_OPERATOR_NEQ => 'notIn',
     ];

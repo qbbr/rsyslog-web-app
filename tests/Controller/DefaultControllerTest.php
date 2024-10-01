@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultControllerTest extends WebTestCase
 {
-    private const URI = '/api/latest';
+    private const string URI = '/api/latest';
 
     public function testLatest(): void
     {
