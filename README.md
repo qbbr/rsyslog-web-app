@@ -5,7 +5,7 @@ Web Application for Rsyslog on Symfony + Vue.js.
 ## Stack
 
  * [PHP 8.3](https://www.php.net/)
- * [Symfony 7](https://symfony.com/)
+ * [Symfony 7.1](https://symfony.com/)
  * [MariaDB 10](https://mariadb.org/)
  * [Vue.js 3](https://vuejs.org/)
  * [Bootstrap 5.3](https://getbootstrap.com/)
