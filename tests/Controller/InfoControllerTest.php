@@ -6,6 +6,7 @@ namespace App\Tests\Controller;
 
 use App\Service\Helper\DbHelper;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Request;
 
 class InfoControllerTest extends WebTestCase
 {
@@ -24,7 +25,7 @@ class InfoControllerTest extends WebTestCase
             ->willReturn('3.05');
         self::getContainer()->set(DbHelper::class, $dbHelperService);
 
-        $client->request('GET', self::URI);
+        $client->request(Request::METHOD_GET, self::URI);
 
         $this->assertResponseIsSuccessful();
         $response = $client->getResponse();

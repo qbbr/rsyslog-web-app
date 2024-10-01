@@ -6,6 +6,7 @@ namespace App\Tests\Controller;
 
 use App\Helper\SearchQueryHelper;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultControllerTest extends WebTestCase
 {
@@ -14,7 +15,7 @@ class DefaultControllerTest extends WebTestCase
     public function testLatest(): void
     {
         $client = static::createClient();
-        $client->request('GET', self::URI);
+        $client->request(Request::METHOD_GET, self::URI);
 
         $this->assertResponseIsSuccessful();
         $response = $client->getResponse();

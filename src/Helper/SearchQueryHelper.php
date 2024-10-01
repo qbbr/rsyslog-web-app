@@ -37,9 +37,7 @@ class SearchQueryHelper
         $terms = array_unique(explode(' ', preg_replace('/\s+/', ' ', trim($searchQuery))));
 
         // ignore the search terms that are too short
-        return array_filter($terms, function ($term) {
-            return 2 <= mb_strlen($term);
-        });
+        return array_filter($terms, fn ($term) => 2 <= mb_strlen($term));
     }
 
     public static function extractFilters(
