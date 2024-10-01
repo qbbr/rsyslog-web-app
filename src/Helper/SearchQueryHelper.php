@@ -86,7 +86,7 @@ class SearchQueryHelper
     }
 
     private static function extractValues(
-        string $values
+        string $values,
     ): array {
         return array_map('trim', explode(',', $values));
     }

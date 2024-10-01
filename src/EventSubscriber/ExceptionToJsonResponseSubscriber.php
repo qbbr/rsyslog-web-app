@@ -19,7 +19,7 @@ class ExceptionToJsonResponseSubscriber implements EventSubscriberInterface
     }
 
     public function onKernelException(
-        ExceptionEvent $event
+        ExceptionEvent $event,
     ): void {
         $exception = $event->getThrowable();
         $statusCode = $this->getStatusCodeFromException($exception);
@@ -42,7 +42,7 @@ class ExceptionToJsonResponseSubscriber implements EventSubscriberInterface
     }
 
     private function getStatusCodeFromException(
-        \Throwable $exception
+        \Throwable $exception,
     ): int {
         if ($exception instanceof HttpException) {
             return $exception->getStatusCode();
@@ -52,7 +52,7 @@ class ExceptionToJsonResponseSubscriber implements EventSubscriberInterface
     }
 
     private function getErrorTypeFromException(
-        \Throwable $exception
+        \Throwable $exception,
     ): string {
         $parts = explode('\\', $exception::class);
 

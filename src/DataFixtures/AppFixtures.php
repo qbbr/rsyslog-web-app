@@ -21,7 +21,7 @@ class AppFixtures extends Fixture
         for ($i = 0; $i < $n; ++$i) {
             $event = new SystemEvents();
             $event->setPriority(Priority::tryFrom(array_rand(Priority::allValues()))->value);
-            $event->setDeviceReportedTime((new \DateTimeImmutable())->modify(sprintf('-%d minute', $n - $i)));
+            $event->setDeviceReportedTime((new \DateTimeImmutable())->modify(\sprintf('-%d minute', $n - $i)));
             $event->setFacility(Facility::tryFrom(array_rand(Facility::allValues()))->value);
             $event->setFromHost(self::HOSTS[array_rand(self::HOSTS)]);
             $event->setSysLogTag(self::TAGS[array_rand(self::TAGS)]);

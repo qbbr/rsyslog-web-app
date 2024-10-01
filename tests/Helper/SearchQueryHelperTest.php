@@ -40,7 +40,7 @@ class SearchQueryHelperTest extends TestCase
                     SearchQueryHelper::FILTER_OPERATOR_EQ => ['host' => ['SRV1']],
                 ],
                 SearchQueryHelper::extractFilters(
-                    sprintf('host %s "SRV1"', SearchQueryHelper::FILTER_OPERATOR_EQ),
+                    \sprintf('host %s "SRV1"', SearchQueryHelper::FILTER_OPERATOR_EQ),
                 ),
             ],
             [
@@ -48,7 +48,7 @@ class SearchQueryHelperTest extends TestCase
                     SearchQueryHelper::FILTER_OPERATOR_EQ => ['h' => ['SRV1'], 'p' => [Priority::warn->name]],
                 ],
                 SearchQueryHelper::extractFilters(
-                    sprintf(
+                    \sprintf(
                         'h %1$s "SRV1", p %1$s"%2$s"',
                         SearchQueryHelper::FILTER_OPERATOR_EQ,
                         Priority::warn->name,
@@ -60,7 +60,7 @@ class SearchQueryHelperTest extends TestCase
                     SearchQueryHelper::FILTER_OPERATOR_NEQ => ['host' => ['SRV1']],
                 ],
                 SearchQueryHelper::extractFilters(
-                    sprintf(
+                    \sprintf(
                         'host %s"SRV1"',
                         SearchQueryHelper::FILTER_OPERATOR_NEQ,
                     )
@@ -72,7 +72,7 @@ class SearchQueryHelperTest extends TestCase
                     SearchQueryHelper::FILTER_OPERATOR_NEQ => ['t' => ['kernel:']],
                 ],
                 SearchQueryHelper::extractFilters(
-                    sprintf(
+                    \sprintf(
                         'h %1$s "SRV1",p%1$s"%3$s", t%2$s "kernel:"',
                         SearchQueryHelper::FILTER_OPERATOR_EQ,
                         SearchQueryHelper::FILTER_OPERATOR_NEQ,
@@ -85,7 +85,7 @@ class SearchQueryHelperTest extends TestCase
                     SearchQueryHelper::FILTER_OPERATOR_EQ => ['host' => ['SRV1', 'DNS1']],
                 ],
                 SearchQueryHelper::extractFilters(
-                    sprintf(
+                    \sprintf(
                         'host %s"SRV1, DNS1"',
                         SearchQueryHelper::FILTER_OPERATOR_EQ,
                     )
