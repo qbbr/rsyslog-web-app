@@ -27,12 +27,12 @@ class ExceptionToJsonResponseSubscriber implements EventSubscriberInterface
         $statusCode = $this->getStatusCodeFromException($exception);
         $data = [
             'code' => $statusCode,
+            'type' => $this->getErrorTypeFromException($exception),
             'message' => $exception->getMessage(),
         ];
 
         if ('prod' !== $event->getRequest()->server->get('APP_ENV')) {
             // TODO: Do not use this in production! This will potentially leak sensitive information.
-            $data['type'] = $this->getErrorTypeFromException($exception);
             $data['file'] = $exception->getFile();
             $data['line'] = $exception->getLine();
             $data['trace'] = $exception->getTrace();
