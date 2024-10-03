@@ -117,7 +117,7 @@ export default {
 
         window.addEventListener('keydown', this.hotkeyListener);
     },
-    destroy() {
+    unmounted() {
         window.removeEventListener('keydown', this.hotkeyListener);
     },
     computed: {
