@@ -19,7 +19,8 @@ export default {
                 OS: {{ info.os }}<br>
                 PHP: {{ info.php.ver }}<br>
                 Symfony: {{ info.sf.ver }} ({{ info.sf.env }})<br>
-                Database: {{ info.db.ver }} ({{ info.db.size }} Mb)
+                Database: {{ info.db.ver }} ({{ info.db.size }} Mb)<br>
+                SystemEvents count: {{ info.count }}
             </p>
 
             <h3>Search</h3>
@@ -78,6 +79,7 @@ export default {
                 php: { ver: '...' },
                 sf: { ver: '...', env: '...' },
                 db: { ver: '...', size: '...' },
+                count: '...',
             }
         }
     },

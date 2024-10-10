@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Kernel;
+use App\Repository\SystemEventsRepository;
 use App\Service\Helper\DbHelper;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
@@ -17,6 +18,7 @@ class InfoController extends AbstractController
     public function __construct(
         private readonly DbHelper $dbHelper,
         private readonly ParameterBagInterface $parameterBag,
+        private readonly SystemEventsRepository $systemEventsRepository,
     ) {
     }
 
@@ -36,6 +38,7 @@ class InfoController extends AbstractController
                 'ver' => $this->dbHelper->getVersion(),
                 'size' => $this->dbHelper->getSize(),
             ],
+            'count' => $this->systemEventsRepository->count(),
         ]);
     }
 }
