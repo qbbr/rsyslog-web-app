@@ -38,7 +38,7 @@ class InfoController extends AbstractController
                 'ver' => $this->dbHelper->getVersion(),
                 'size' => $this->dbHelper->getSize(),
             ],
-            'count' => $this->systemEventsRepository->count(),
+            'count' => $this->systemEventsRepository->count([]),
         ]);
     }
 }
